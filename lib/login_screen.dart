@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -17,10 +16,11 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SizedBox.expand(
         child: FittedBox(
           // fit: BoxFit.contain,
-          child: Center(
+          child: Container(
+            alignment: Alignment.topCenter,
             child: SizedBox(
               height: 590,
-              width: 330,
+              width: 320,
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(40, 100, 40, 0),
                 child: Column(
@@ -58,9 +58,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Padding(
                             padding: const EdgeInsets.fromLTRB(15, 0, 20, 5),
                             child: TextFormField(
-                              // initialValue: '+7',
+                              autofocus: true,
                               controller: TextEditingController()..text = '+7',
-                              // decoration: InputDecoration(),
                               keyboardType: TextInputType.number,
                               inputFormatters: <TextInputFormatter>[
                                 FilteringTextInputFormatter.digitsOnly,
@@ -79,7 +78,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 34,
                         child: DecoratedBox(
                           decoration: const BoxDecoration(
-                            // border: Border.all(color: Colors.grey, width: 0),
                             color: Color(0xffeceff1),
                             borderRadius:
                                 BorderRadius.all(Radius.elliptical(36, 36)),
@@ -90,7 +88,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               obscureText: true,
                               enableSuggestions: false,
                               autocorrect: false,
-                              // decoration: InputDecoration(),
                               keyboardType: TextInputType.number,
                             ),
                           ),
@@ -106,7 +103,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 42,
                         child: DecoratedBox(
                           decoration: const BoxDecoration(
-                            // border: Border.all(color: Colors.grey, width: 0),
                             color: Color(0xffeceff1),
                             borderRadius:
                                 BorderRadius.all(Radius.elliptical(36, 36)),
@@ -121,8 +117,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                               ),
                             ),
-                            // style:
-                            // ButtonStyle(backgroundColor: Color(0xff0079D0)),
                           ),
                         ),
                       ),
@@ -131,12 +125,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 62,
                     ),
                     Center(
-                      child: Text(
-                        'Регистрация',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue[700],
+                      child: InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'Регистрация',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue[700],
+                          ),
                         ),
                       ),
                     ),
@@ -144,12 +141,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 20,
                     ),
                     Center(
-                      child: Text(
-                        'Забыли пароль?',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue[700],
+                      child: InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'Забыли пароль?',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue[700],
+                          ),
                         ),
                       ),
                     ),

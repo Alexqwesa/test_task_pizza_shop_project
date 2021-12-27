@@ -24,9 +24,17 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        // textTheme: GoogleFonts.robotoTextTheme(
+        //   Theme.of(context).textTheme,
+        // ),
+        textTheme: const TextTheme(
+          bodyText2: TextStyle(fontFamily: 'Roboto', fontSize: 16),
+          bodyText1: TextStyle(fontFamily: 'Roboto', fontSize: 16),
+        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: TextButton.styleFrom(
             backgroundColor: Colors.blue[700],
+            textStyle: const TextStyle(fontFamily: 'Roboto', fontSize: 16),
           ),
         ),
       ),
