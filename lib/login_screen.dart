@@ -108,7 +108,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 BorderRadius.all(Radius.elliptical(36, 36)),
                           ),
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/main_screen');
+                            },
                             child: const Text('Войти'),
                             style: ButtonStyle(
                               shape: MaterialStateProperty.all(

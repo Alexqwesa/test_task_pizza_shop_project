@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -40,13 +41,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           width: 9,
                         ),
                         SizedBox(
-                          width: 122,
+                          width: 126,
                           child: Text(
                             'Регистрация',
-                            style: Theme.of(context).textTheme.headline3,
-                            //   style:
-                            //   TextStyle(
-                            //       fontWeight: FontWeight.bold, fontSize: 20),
+                            // TODO: fix nunito font
+                            style: GoogleFonts.nunito(
+                              textStyle: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w800,
+                                color: Color(0xFF5C5C5C),
+                              ),
+                            ),
+                            // style: GoogleFonts.nunito(
+                            //   textStyle: Theme.of(context).textTheme.headline3,
+                            // ),
+                            // style: Theme.of(context).textTheme.headline3,
                           ),
                         ),
                         Expanded(

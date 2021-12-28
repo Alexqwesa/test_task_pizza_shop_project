@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_task_pizza_shop_project/login_screen.dart';
+import 'package:test_task_pizza_shop_project/main_screen.dart';
 import 'package:test_task_pizza_shop_project/register_screen.dart';
 
 void main() {
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         // ),
         textTheme: const TextTheme(
           headline3: TextStyle(
-            fontFamily: 'Nunito',
+            // fontFamily: 'Nunito', // didn't work
             fontSize: 20,
             fontWeight: FontWeight.w800,
             // textBaseline: TextBaseline(),
@@ -68,6 +69,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/register': (context) => const RegisterScreen(),
+        '/main_screen': (context) => const MainScreen(),
       },
       home: const LoginScreen(),
     );
