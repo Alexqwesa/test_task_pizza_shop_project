@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_task_pizza_shop_project/login_screen.dart';
+import 'package:test_task_pizza_shop_project/register_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,8 +29,24 @@ class MyApp extends StatelessWidget {
         //   Theme.of(context).textTheme,
         // ),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(fontFamily: 'Roboto', fontSize: 16),
-          bodyText1: TextStyle(fontFamily: 'Roboto', fontSize: 16),
+          headline3: TextStyle(
+            fontFamily: 'Nunito',
+            fontSize: 20,
+            fontWeight: FontWeight.w800,
+            // textBaseline: TextBaseline(),
+            color: Color(0xFF5C5C5C),
+          ),
+          bodyText2: TextStyle(
+            fontFamily: 'Roboto',
+            fontSize: 16,
+            color: Color(0xFFC4C4C4),
+          ),
+          bodyText1: TextStyle(
+            fontFamily: 'Roboto',
+            fontSize: 16,
+            fontWeight: FontWeight.normal,
+            color: Color(0xa7000000), //  Colors.black.withOpacity(0.6),
+          ),
         ),
         inputDecorationTheme: const InputDecorationTheme(
           border: UnderlineInputBorder(
@@ -40,12 +57,18 @@ class MyApp extends StatelessWidget {
           style: TextButton.styleFrom(
             backgroundColor: const Color(0xff0079D0), // Colors.blue[700],
             shadowColor: Colors.white,
-            textStyle: const TextStyle(fontFamily: 'Roboto', fontSize: 16),
+            textStyle: const TextStyle(
+              fontFamily: 'Roboto',
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
       ),
       initialRoute: '/',
-      routes: {},
+      routes: {
+        '/register': (context) => const RegisterScreen(),
+      },
       home: const LoginScreen(),
     );
   }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,14 +22,52 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 590,
               width: 320,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(40, 95, 40, 0),
+                padding: const EdgeInsets.fromLTRB(10, 45, 10, 0),
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 80,
-                      width: 103,
-                      child: Center(
-                        child: Image.asset('assets/bird.png'),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                          child: Image(
+                            image: AssetImage('assets/group.png'),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 9,
+                        ),
+                        SizedBox(
+                          width: 122,
+                          child: Text(
+                            'Регистрация',
+                            style: Theme.of(context).textTheme.headline3,
+                            //   style:
+                            //   TextStyle(
+                            //       fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    const Divider(
+                      thickness: 1.5,
+                      height: 8,
+                    ),
+                    Center(
+                      child: Text(
+                        'Чтобы зарегистрироваться введите свой номер телефона и почту',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyText2,
+                        // TextStyle(color: Colors.black.withOpacity(0.3),
+                        // ),
                       ),
                     ),
                     const SizedBox(
@@ -37,13 +75,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Center(
                       child: Text(
-                        'Введите логин в виде 10 цифр номера телефона',
+                        'Телефон',
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyText1,
+                        // style: TextStyle(color: Colors.black.withOpacity(0.6)),
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 6,
                     ),
                     Center(
                       child: SizedBox(
@@ -70,7 +109,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 14,
+                    ),
+                    Center(
+                      child: Text(
+                        'Почта',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 6,
                     ),
                     Center(
                       child: SizedBox(
@@ -95,7 +144,27 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 28,
+                      height: 24,
+                    ),
+                    Center(
+                      child: Text(
+                        'Вам придет четырехзначный код, который будет вашим паролем',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyText2,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Center(
+                      child: Text(
+                        'Изменить пароль можно\n будет в личном кабинете после регистрации',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyText2,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
                     ),
                     Center(
                       child: SizedBox(
@@ -109,7 +178,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           child: ElevatedButton(
                             onPressed: () {},
-                            child: const Text('Войти'),
+                            child: const Text('Отправить код'),
                             style: ButtonStyle(
                               shape: MaterialStateProperty.all(
                                 RoundedRectangleBorder(
@@ -123,36 +192,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(
                       height: 52,
-                    ),
-                    SizedBox(
-                      height: 36,
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/register');
-                        },
-                        child: Text(
-                          'Регистрация',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue[700],
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 36,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Забыли пароль?',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue[700],
-                          ),
-                        ),
-                      ),
                     ),
                   ],
                 ),
