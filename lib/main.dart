@@ -31,9 +31,15 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(fontFamily: 'Roboto', fontSize: 16),
           bodyText1: TextStyle(fontFamily: 'Roboto', fontSize: 16),
         ),
+        inputDecorationTheme: const InputDecorationTheme(
+          border: UnderlineInputBorder(
+            borderSide: BorderSide(style: BorderStyle.none, width: 0),
+          ),
+        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: TextButton.styleFrom(
-            backgroundColor: Colors.blue[700],
+            backgroundColor: const Color(0xff0079D0), // Colors.blue[700],
+            shadowColor: Colors.white,
             textStyle: const TextStyle(fontFamily: 'Roboto', fontSize: 16),
           ),
         ),

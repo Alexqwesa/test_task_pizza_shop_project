@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 590,
               width: 320,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(40, 100, 40, 0),
+                padding: const EdgeInsets.fromLTRB(40, 95, 40, 0),
                 child: Column(
                   children: [
                     SizedBox(
@@ -122,11 +122,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 62,
+                      height: 52,
                     ),
-                    Center(
-                      child: InkWell(
-                        onTap: () {},
+                    SizedBox(
+                      height: 36,
+                      child: TextButton(
+                        onPressed: () {},
                         child: Text(
                           'Регистрация',
                           style: TextStyle(
@@ -137,12 +138,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Center(
-                      child: InkWell(
-                        onTap: () {},
+                    SizedBox(
+                      height: 36,
+                      child: TextButton(
+                        onPressed: () {},
                         child: Text(
                           'Забыли пароль?',
                           style: TextStyle(
