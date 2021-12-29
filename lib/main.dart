@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:test_task_pizza_shop_project/login_screen.dart';
 import 'package:test_task_pizza_shop_project/main_screen.dart';
 import 'package:test_task_pizza_shop_project/register_screen.dart';
@@ -30,7 +31,14 @@ class MyApp extends StatelessWidget {
         // textTheme: GoogleFonts.robotoTextTheme(
         //   Theme.of(context).textTheme,
         // ),
+        // backgroundColor: Colors.white,
         textTheme: const TextTheme(
+          headline1: TextStyle(
+            fontFamily: 'Inter',
+            fontSize: 30,
+            fontWeight: FontWeight.w700,
+            color: Colors.black,
+          ),
           // headline2: GoogleFonts.nunito(  // didn't work
           //   fontSize: 20            ,
           //   fontWeight: FontWeight.w800,
