@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -40,18 +39,30 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         const SizedBox(
                           width: 9,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 126,
                           child: Text(
                             'Регистрация',
-                            // TODO: fix nunito font
-                            style: GoogleFonts.nunito(
-                              textStyle: const TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w800,
-                                color: Color(0xFF5C5C5C),
-                              ),
+                            // style: TextStyle(
+                            //   fontFamily: 'Pushster',
+                            //   fontSize: 20,
+                            //   fontWeight: FontWeight.w800,
+                            //   color: Color(0xFF5C5C5C),
+                            // ),
+                            style: TextStyle(
+                              fontFamily: 'NanitoAsset',
+                              fontSize: 20,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xFF5C5C5C),
                             ),
+                            // TODO: fix nunito font
+                            // style: GoogleFonts.nunito(
+                            //   textStyle: const TextStyle(
+                            //     fontSize: 20,
+                            //     fontWeight: FontWeight.w900,
+                            //     color: Color(0xFF5C5C5C),
+                            //   ),
+                            // ),
                             // style: GoogleFonts.nunito(
                             //   textStyle: Theme.of(context).textTheme.headline3,
                             // ),

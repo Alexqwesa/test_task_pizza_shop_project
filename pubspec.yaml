@@ -93,3 +93,11 @@ flutter:
 
   assets:
     - assets/
+
+  fonts:
+    - family: Pushster
+      fonts:
+        - asset: assets/Pushster-Regular.ttf
+    - family: NanitoAsset
+      fonts:
+        - asset: assets/Nunito-VariableFont_wght.ttf
