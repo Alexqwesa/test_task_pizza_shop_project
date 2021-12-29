@@ -22,13 +22,6 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     const buttonColor = Color(0xff0079D0);
-    List<Sauce> d = Sauce.values;
-    // final buttonColor = Theme.of(context).elevatedButtonTheme.style!.backgroundColor;
-    // final MaterialColor buttonColor = MaterialStateProperty.all(
-    //         Theme.of(context).elevatedButtonTheme.style!.backgroundColor)
-    //     .resolve((state) {
-    //   return;
-    // }) as Color;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -99,7 +92,6 @@ class _MainScreenState extends State<MainScreen> {
                               setState(() {
                                 doughThickness = index;
                               });
-                              //print('switched to: $index');
                             },
                           ),
                           const SizedBox(
@@ -107,7 +99,6 @@ class _MainScreenState extends State<MainScreen> {
                           ),
                           Container(
                             alignment: Alignment.topLeft,
-                            // padding: const EdgeInsets.only(left: 42),
                             child: const Text(
                               'Размер:',
                               textAlign: TextAlign.left,
@@ -215,7 +206,7 @@ class _MainScreenState extends State<MainScreen> {
                                     keyboardType: TextInputType.number,
                                     inputFormatters: <TextInputFormatter>[
                                       FilteringTextInputFormatter.digitsOnly,
-                                    ], // Only numbers can be entered
+                                    ],
                                   ),
                                 ),
                               ),
