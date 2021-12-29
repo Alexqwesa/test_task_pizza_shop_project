@@ -84,6 +84,9 @@ class _MainScreenState extends State<MainScreen> {
                                       .copyWith(fontSize: 16),
                                 ),
                               ),
+                              const SizedBox(
+                                height: 33,
+                              ),
                               ToggleSwitch(
                                 minWidth: 145.0,
                                 minHeight: 34,
