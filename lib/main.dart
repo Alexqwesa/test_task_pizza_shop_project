@@ -25,7 +25,8 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue, //Color(0xff0079D0),
+        primarySwatch: Colors.blue,
+        //Color(0xff0079D0),
         // textTheme: GoogleFonts.robotoTextTheme(
         //   Theme.of(context).textTheme,
         // ),
@@ -63,6 +64,18 @@ class MyApp extends StatelessWidget {
               fontSize: 16,
               fontWeight: FontWeight.w600,
             ),
+          ),
+        ),
+        radioTheme: RadioThemeData(
+          visualDensity: VisualDensity.compact,
+          fillColor: MaterialStateProperty.resolveWith<Color?>(
+            (state) {
+              if (state.contains(MaterialState.selected)) {
+                return const Color(0xFF5DB075); //  Colors.green[400],
+              }
+
+              return null;
+            },
           ),
         ),
       ),
