@@ -31,6 +31,10 @@ class MyApp extends StatelessWidget {
         //   Theme.of(context).textTheme,
         // ),
         textTheme: const TextTheme(
+          // headline2: GoogleFonts.nunito(  // didn't work
+          //   fontSize: 20            ,
+          //   fontWeight: FontWeight.w800,
+          // ),
           headline3: TextStyle(
             // fontFamily: 'Nunito', // didn't work
             fontSize: 20,

@@ -43,23 +43,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           width: 126,
                           child: Text(
                             'Регистрация',
-                            // style: TextStyle(
-                            //   fontFamily: 'Pushster',
-                            //   fontSize: 20,
-                            //   fontWeight: FontWeight.w800,
-                            //   color: Color(0xFF5C5C5C),
-                            // ),
                             style: TextStyle(
-                              fontFamily: 'NanitoAsset',
+                              fontFamily: 'NunitoAsset',
                               fontSize: 20,
                               fontWeight: FontWeight.w800,
                               color: Color(0xFF5C5C5C),
                             ),
-                            // TODO: fix nunito font
-                            // style: GoogleFonts.nunito(
+                            // TODO: why  GoogleFonts.nunito brocken - create bug report
+                            // style: GoogleFonts.nunito(       // this didn't work
                             //   textStyle: const TextStyle(
                             //     fontSize: 20,
-                            //     fontWeight: FontWeight.w900,
+                            //     fontWeight: FontWeight.w800,
+                            //     color: Color(0xFF5C5C5C),
+                            //   ),
+                            // ),
+                            // style: GoogleFonts.lobster(      // this works!!!!
+                            //   textStyle: const TextStyle(
+                            //     fontSize: 20,
+                            //     fontWeight: FontWeight.w800,
                             //     color: Color(0xFF5C5C5C),
                             //   ),
                             // ),
@@ -67,6 +68,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             //   textStyle: Theme.of(context).textTheme.headline3,
                             // ),
                             // style: Theme.of(context).textTheme.headline3,
+                            // style: Theme.of(context).textTheme.headline2,
                           ),
                         ),
                         Expanded(

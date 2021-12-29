@@ -98,6 +98,6 @@ flutter:
     - family: Pushster
       fonts:
         - asset: assets/Pushster-Regular.ttf
-    - family: NanitoAsset
+    - family: NunitoAsset
       fonts:
         - asset: assets/Nunito-VariableFont_wght.ttf
