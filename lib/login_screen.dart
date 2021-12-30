@@ -145,7 +145,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 36,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/bug_screen');
+                        },
                         child: Text(
                           'Забыли пароль?',
                           style: TextStyle(
