@@ -3,10 +3,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:test_task_pizza_shop_project/bug_screen.dart';
+import 'package:test_task_pizza_shop_project/bug_screen2.dart';
 import 'package:test_task_pizza_shop_project/login_screen.dart';
 import 'package:test_task_pizza_shop_project/main_screen.dart';
 import 'package:test_task_pizza_shop_project/register_screen.dart';
 import 'package:test_task_pizza_shop_project/slider.dart';
+
 
 Future<void> main() async {
   runApp(const MyApp());
@@ -101,6 +103,7 @@ class MyApp extends StatelessWidget {
         '/register': (context) => const RegisterScreen(),
         '/main_screen': (context) => const MainScreen(),
         '/bug_screen': (context) => const BugScreen(),
+        '/bug_screen2': (context) => const BugScreen2(),
       },
       home: const LoginScreen(),
     );

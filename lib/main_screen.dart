@@ -305,7 +305,9 @@ class _MainScreenState extends State<MainScreen> {
                                       ),
                                     ),
                                     child: ElevatedButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.pushNamed(context, '/bug_screen2');
+                                      },
                                       child: const Text('Заказать'),
                                       style: ButtonStyle(
                                         shape: MaterialStateProperty.all(
