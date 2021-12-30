@@ -77,7 +77,7 @@ class MyApp extends StatelessWidget {
         ),
         inputDecorationTheme: const InputDecorationTheme(
           border: UnderlineInputBorder(
-            borderSide: BorderSide(style: BorderStyle.none, width: 0),
+            borderSide: BorderSide.none,
           ),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(

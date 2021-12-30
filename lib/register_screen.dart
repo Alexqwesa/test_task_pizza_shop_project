@@ -199,7 +199,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 BorderRadius.all(Radius.elliptical(36, 36)),
                           ),
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/main_screen');
+                            },
                             child: const Text('Отправить код'),
                             style: ButtonStyle(
                               shape: MaterialStateProperty.all(

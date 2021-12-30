@@ -2,6 +2,12 @@
 
 A test task for university - create mock app to order pizza 
 
+## TODO:
+- [ ] add support for web
+- [ ] slider bar: how it really should be like?
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

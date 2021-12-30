@@ -40,7 +40,7 @@ class _MainScreenState extends State<MainScreen> {
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width,
                 minWidth: MediaQuery.of(context).size.width,
-                maxHeight: 900,
+                maxHeight: 1020,
               ),
               child: FittedBox(
                 fit: BoxFit.fitWidth,
@@ -48,7 +48,7 @@ class _MainScreenState extends State<MainScreen> {
                 child: Container(
                   alignment: Alignment.topCenter,
                   child: SizedBox(
-                    height: 900,
+                    height: 1020,
                     width: 320,
                     child: Column(
                       children: [
@@ -93,7 +93,7 @@ class _MainScreenState extends State<MainScreen> {
                                 minWidth: 145.0,
                                 minHeight: 34,
                                 cornerRadius: 83.0,
-                                activeBgColors: [
+                                activeBgColors: const [
                                   [buttonColor],
                                   [buttonColor],
                                 ],
@@ -169,7 +169,7 @@ class _MainScreenState extends State<MainScreen> {
                                               contentPadding:
                                                   const EdgeInsets.only(
                                                 left: 8,
-                                                right: 0,
+                                                // right: 0,
                                               ),
                                               selectedTileColor:
                                                   const Color(0xFF5DB075),
@@ -206,12 +206,13 @@ class _MainScreenState extends State<MainScreen> {
                                     ),
                                     child: ListTileTheme(
                                       horizontalTitleGap: 2,
-                                      contentPadding: EdgeInsets.all(1),
+                                      contentPadding: const EdgeInsets.all(1),
                                       child: SwitchListTile(
                                         dense: false,
                                         activeColor: const Color(0xFF0E4DA4),
                                         activeTrackColor:
-                                            Color(0xFF0E4DA4).withOpacity(0.24),
+                                            const Color(0xFF0E4DA4)
+                                                .withOpacity(0.24),
                                         secondary: SizedBox(
                                           height: 34,
                                           width: 36,
@@ -267,14 +268,18 @@ class _MainScreenState extends State<MainScreen> {
                                     ),
                                     child: Padding(
                                       padding: const EdgeInsets.fromLTRB(
-                                          15, 0, 20, 5),
+                                        15,
+                                        0,
+                                        20,
+                                        5,
+                                      ),
                                       child: TextFormField(
                                         // autofocus: false,
                                         textAlign: TextAlign.right,
                                         controller: TextEditingController()
                                           ..text = withCheese
-                                              ? '${(price) * pizzaSize + 50} ₽'
-                                              : '${(price) * pizzaSize} ₽',
+                                              ? '${price * pizzaSize + 50} ₽'
+                                              : '${price * pizzaSize} ₽',
                                         keyboardType: TextInputType.none,
                                         // inputFormatters: <TextInputFormatter>[
                                         //   FilteringTextInputFormatter

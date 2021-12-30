@@ -8,21 +8,24 @@ class RectSliderComponentShape extends SliderComponentShape {
 
   @override
   Size getPreferredSize(bool isEnabled, bool isDiscrete) {
-    return Size(4, 12);
+    return const Size(4, 12); // ???
   }
 
   @override
-  void paint(PaintingContext context, Offset center,
-      {required Animation<double> activationAnimation,
-      required Animation<double> enableAnimation,
-      required bool isDiscrete,
-      required TextPainter labelPainter,
-      required RenderBox parentBox,
-      required SliderThemeData sliderTheme,
-      required TextDirection textDirection,
-      required double value,
-      required double textScaleFactor,
-      required Size sizeWithOverflow}) {
+  void paint(
+    PaintingContext context,
+    Offset center, {
+    required Animation<double> activationAnimation,
+    required Animation<double> enableAnimation,
+    required bool isDiscrete,
+    required TextPainter labelPainter,
+    required RenderBox parentBox,
+    required SliderThemeData sliderTheme,
+    required TextDirection textDirection,
+    required double value,
+    required double textScaleFactor,
+    required Size sizeWithOverflow,
+  }) {
     // sliderImage
     context.canvas.scale(0.5, 0.5);
     context.canvas
@@ -31,15 +34,21 @@ class RectSliderComponentShape extends SliderComponentShape {
 }
 
 Future<ui.Image> imgImageToUiImage(img.Image image) async {
-  ui.ImmutableBuffer buffer = await ui.ImmutableBuffer.fromUint8List(
-      image.getBytes(format: img.Format.rgba));
-  ui.ImageDescriptor id = ui.ImageDescriptor.raw(buffer,
-      height: image.height,
-      width: image.width,
-      pixelFormat: ui.PixelFormat.rgba8888);
-  ui.Codec codec = await id.instantiateCodec(
-      targetHeight: image.height, targetWidth: image.width);
-  ui.FrameInfo fi = await codec.getNextFrame();
-  ui.Image uiImage = fi.image;
+  final ui.ImmutableBuffer buffer = await ui.ImmutableBuffer.fromUint8List(
+    image.getBytes(format: img.Format.rgba),
+  );
+  final ui.ImageDescriptor id = ui.ImageDescriptor.raw(
+    buffer,
+    height: image.height,
+    width: image.width,
+    pixelFormat: ui.PixelFormat.rgba8888,
+  );
+  final ui.Codec codec = await id.instantiateCodec(
+    targetHeight: image.height,
+    targetWidth: image.width,
+  );
+  final ui.FrameInfo fi = await codec.getNextFrame();
+  final ui.Image uiImage = fi.image;
+
   return uiImage;
 }
