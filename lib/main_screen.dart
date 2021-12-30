@@ -18,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
   int doughThickness = 0;
   Sauce sauce = Sauce.hot;
   double pizzaSize = 1.3;
-  double price = 100.0;
+  double price = 250.0;
 
   bool withCheese = false;
 
@@ -193,7 +193,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                               Center(
                                 child: Padding(
-                                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(5, 0, 5, 0),
                                   child: DecoratedBox(
                                     decoration: const BoxDecoration(
                                       borderRadius: BorderRadius.all(
@@ -207,7 +208,8 @@ class _MainScreenState extends State<MainScreen> {
                                       child: SwitchListTile(
                                         dense: false,
                                         activeColor: const Color(0xFF0E4DA4),
-                                        activeTrackColor: Color(0xFF0E4DA4).withOpacity(0.24),
+                                        activeTrackColor:
+                                            Color(0xFF0E4DA4).withOpacity(0.24),
                                         secondary: SizedBox(
                                           height: 34,
                                           width: 36,
@@ -267,7 +269,9 @@ class _MainScreenState extends State<MainScreen> {
                                       child: TextFormField(
                                         // autofocus: false,
                                         controller: TextEditingController()
-                                          ..text = '$price ₽',
+                                          ..text = withCheese
+                                              ? '${(price) * pizzaSize + 50} ₽'
+                                              : '${(price) * pizzaSize} ₽',
                                         keyboardType: TextInputType.none,
                                         // inputFormatters: <TextInputFormatter>[
                                         //   FilteringTextInputFormatter

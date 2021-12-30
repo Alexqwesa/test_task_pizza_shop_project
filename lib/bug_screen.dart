@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//
+// for https://github.com/material-foundation/google-fonts-flutter/issues/207
+//
+
 class BugScreen extends StatefulWidget {
   const BugScreen({Key? key}) : super(key: key);
 

@@ -1,6 +1,6 @@
 # test_task_pizza_shop_project
 
-A test task for university
+A test task for university - create mock app to order pizza 
 
 ## Getting Started
 
