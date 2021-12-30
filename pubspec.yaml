@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  image: any
+#  image: any
   google_fonts: any
   surf_lint_rules: any
   toggle_switch: any

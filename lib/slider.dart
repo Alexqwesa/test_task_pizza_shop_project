@@ -1,10 +1,16 @@
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
-import 'package:image/image.dart' as img;
 
 class RectSliderComponentShape extends SliderComponentShape {
-  static late ui.Image sliderImage;
+  ui.Paint paint_ = Paint();
+
+  RectSliderComponentShape() {
+    paint_
+      ..strokeWidth = 50
+      ..color = Color(0xFF006393)
+      ..style = PaintingStyle.fill;
+  }
 
   @override
   Size getPreferredSize(bool isEnabled, bool isDiscrete) {
@@ -26,29 +32,15 @@ class RectSliderComponentShape extends SliderComponentShape {
     required double textScaleFactor,
     required Size sizeWithOverflow,
   }) {
-    // sliderImage
-    context.canvas.scale(0.5, 0.5);
-    context.canvas
-        .drawImage(sliderImage, Offset(30 + value * 510, 40), Paint());
+    final t = 2.7;
+    final path = Path();
+    path.moveTo(17 + value * 252, 10 * t);
+    path
+      ..relativeLineTo(0, 5 * t)
+      ..relativeLineTo(5 * t, 0)
+      ..relativeLineTo(0, -5 * t)
+      ..relativeLineTo(-2.5 * t, -2 * t)
+      ..close();
+    context.canvas.drawPath(path, paint_);
   }
-}
-
-Future<ui.Image> imgImageToUiImage(img.Image image) async {
-  final ui.ImmutableBuffer buffer = await ui.ImmutableBuffer.fromUint8List(
-    image.getBytes(format: img.Format.rgba),
-  );
-  final ui.ImageDescriptor id = ui.ImageDescriptor.raw(
-    buffer,
-    height: image.height,
-    width: image.width,
-    pixelFormat: ui.PixelFormat.rgba8888,
-  );
-  final ui.Codec codec = await id.instantiateCodec(
-    targetHeight: image.height,
-    targetWidth: image.width,
-  );
-  final ui.FrameInfo fi = await codec.getNextFrame();
-  final ui.Image uiImage = fi.image;
-
-  return uiImage;
 }

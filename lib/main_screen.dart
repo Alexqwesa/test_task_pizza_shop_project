@@ -128,6 +128,7 @@ class _MainScreenState extends State<MainScreen> {
                                 min: 1,
                                 max: 2,
                                 divisions: 10,
+                                activeColor: Color(0xFF0079D0),
                                 onChanged: (val) {
                                   setState(() {
                                     pizzaSize = val;

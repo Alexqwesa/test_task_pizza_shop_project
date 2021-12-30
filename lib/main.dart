@@ -1,9 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/widgets.dart';
-import 'package:image/image.dart' as img;
 import 'package:test_task_pizza_shop_project/bug_screen.dart';
 import 'package:test_task_pizza_shop_project/login_screen.dart';
 import 'package:test_task_pizza_shop_project/main_screen.dart';
@@ -11,12 +9,6 @@ import 'package:test_task_pizza_shop_project/register_screen.dart';
 import 'package:test_task_pizza_shop_project/slider.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  // todo: move to initState of widget
-  final bytes = await rootBundle.load('assets/slider.png');
-  final image = img.decodeImage(bytes.buffer.asUint8List())!;
-  RectSliderComponentShape.sliderImage = await imgImageToUiImage(image);
   runApp(const MyApp());
 }
 
