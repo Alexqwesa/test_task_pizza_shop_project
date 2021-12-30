@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -268,6 +270,7 @@ class _MainScreenState extends State<MainScreen> {
                                           15, 0, 20, 5),
                                       child: TextFormField(
                                         // autofocus: false,
+                                        textAlign: TextAlign.right,
                                         controller: TextEditingController()
                                           ..text = withCheese
                                               ? '${(price) * pizzaSize + 50} ₽'

@@ -1,11 +1,22 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/widgets.dart';
+import 'package:image/image.dart' as img;
 import 'package:test_task_pizza_shop_project/bug_screen.dart';
 import 'package:test_task_pizza_shop_project/login_screen.dart';
 import 'package:test_task_pizza_shop_project/main_screen.dart';
 import 'package:test_task_pizza_shop_project/register_screen.dart';
+import 'package:test_task_pizza_shop_project/slider.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // todo: move to initState of widget
+  final bytes = await rootBundle.load('assets/slider.png');
+  final image = img.decodeImage(bytes.buffer.asUint8List())!;
+  RectSliderComponentShape.sliderImage = await imgImageToUiImage(image);
   runApp(const MyApp());
 }
 
@@ -28,11 +39,12 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
-        //Color(0xff0079D0),
-        // textTheme: GoogleFonts.robotoTextTheme(
-        //   Theme.of(context).textTheme,
-        // ),
-        // backgroundColor: Colors.white,
+        sliderTheme: SliderTheme.of(context).copyWith(
+          // showValueIndicator: ShowValueIndicator.never,
+          tickMarkShape: SliderTickMarkShape.noTickMark,
+          thumbShape: RectSliderComponentShape(),
+        ),
+
         textTheme: const TextTheme(
           headline1: TextStyle(
             fontFamily: 'Inter',
