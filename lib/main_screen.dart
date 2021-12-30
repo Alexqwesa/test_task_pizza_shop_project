@@ -7,7 +7,7 @@ import 'package:toggle_switch/toggle_switch.dart';
 
 enum Sauce { hot, sourSweet, cheese }
 
-const List<String> SauceText = ['Острый', 'Кисло-сладкий', 'Сырный'];
+const List<String> sauceText = ['Острый', 'Кисло-сладкий', 'Сырный'];
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -21,7 +21,6 @@ class _MainScreenState extends State<MainScreen> {
   Sauce sauce = Sauce.hot;
   double pizzaSize = 1.3;
   double price = 250.0;
-
   bool withCheese = false;
 
   @override
@@ -160,7 +159,7 @@ class _MainScreenState extends State<MainScreen> {
                                             height: 48,
                                             child: RadioListTile<Sauce>(
                                               // tileColor: const Color(0xFF5DB075),
-                                              title: Text(SauceText[i]),
+                                              title: Text(sauceText[i]),
                                               controlAffinity:
                                                   ListTileControlAffinity
                                                       .trailing,
