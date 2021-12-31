@@ -34,7 +34,7 @@ class RectSliderComponentShape extends SliderComponentShape {
   }) {
     final t = 2.7;
     final path = Path();
-    path.moveTo(17 + value * 252, 10 * t);
+    path.moveTo(17 + value * 252, 10 * t + 2);
     path
       ..relativeLineTo(0, 5 * t)
       ..relativeLineTo(5 * t, 0)

@@ -9,7 +9,6 @@ import 'package:test_task_pizza_shop_project/main_screen.dart';
 import 'package:test_task_pizza_shop_project/register_screen.dart';
 import 'package:test_task_pizza_shop_project/slider.dart';
 
-
 Future<void> main() async {
   runApp(const MyApp());
 }
@@ -37,6 +36,10 @@ class MyApp extends StatelessWidget {
           // showValueIndicator: ShowValueIndicator.never,
           tickMarkShape: SliderTickMarkShape.noTickMark,
           thumbShape: RectSliderComponentShape(),
+          trackHeight: 3,
+          trackShape: const RectangularSliderTrackShape(),
+          // additionalActiveTrackHeight: 1,
+          // trackShape: SliderTrackShape(  ),
         ),
 
         textTheme: const TextTheme(
