@@ -26,20 +26,17 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     const buttonColor = Color(0xff0079D0);
+    final ratio = 600/320;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Center(
-        child: Scrollbar(
-          interactive: true,
-          scrollbarOrientation: ScrollbarOrientation.left,
-          isAlwaysShown: true,
-          child: SingleChildScrollView(
+        child: SingleChildScrollView(
+          child: Center(
             child: ConstrainedBox(
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width,
-                minWidth: MediaQuery.of(context).size.width,
-                maxHeight: 1020,
+                minWidth: MediaQuery.of(context).size.height/ratio,
               ),
               child: FittedBox(
                 fit: BoxFit.fitWidth,
