@@ -1,15 +1,29 @@
 import 'dart:ui' as ui;
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
 class RectSliderComponentShape extends SliderComponentShape {
-  ui.Paint paint_ = Paint();
+  late final Picture slider;
 
   RectSliderComponentShape() {
-    paint_
+    final paint_ = Paint()
       ..strokeWidth = 50
-      ..color = Color(0xFF006393)
+      ..color = const Color(0xFF006393)
       ..style = PaintingStyle.fill;
+
+    const t = 2.7;
+    final path = Path()
+      ..moveTo(17, t * 10 + 2)
+      ..relativeLineTo(0, t * 5)
+      ..relativeLineTo(t * 5, 0)
+      ..relativeLineTo(0, -5 * t)
+      ..relativeLineTo(-2.5 * t, -2 * t)
+      ..close();
+
+    final slide_ = ui.PictureRecorder();
+    Canvas(slide_).drawPath(path, paint_);
+    slider = slide_.endRecording();
   }
 
   @override
@@ -32,15 +46,7 @@ class RectSliderComponentShape extends SliderComponentShape {
     required double textScaleFactor,
     required Size sizeWithOverflow,
   }) {
-    final t = 2.7;
-    final path = Path();
-    path.moveTo(17 + value * 252, 10 * t + 2);
-    path
-      ..relativeLineTo(0, 5 * t)
-      ..relativeLineTo(5 * t, 0)
-      ..relativeLineTo(0, -5 * t)
-      ..relativeLineTo(-2.5 * t, -2 * t)
-      ..close();
-    context.canvas.drawPath(path, paint_);
+    context.canvas.translate(value * 252, 0);
+    context.canvas.drawPicture(slider);
   }
 }
